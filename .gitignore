@@ -3,6 +3,7 @@
 build/
 dist/
 NLParse.egg-info/
+*/__pycache__/
 
 # files
 *.json
