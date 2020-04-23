@@ -48,7 +48,7 @@ class Excel:
 
 
 if __name__ == "__main__":
-    filename = "data/" + "F 카페(7,859).xlsx"
+    filename = "data/" + "test_xlsx.xlsx"
     excel = Excel(filename)
     sentence = excel.select("SENTENCE")
     excel.save("only_speak", sentence, "txt")
