@@ -43,13 +43,31 @@ class Excel:
     # save files
     def save(self, filename, data, format=None):
         format = self.format[1:] if format is None else format
-        newName = self.filename + "_" + filename + "." + format
+        path = os.getcwd()+"/data"
+        if not os.path.isdir(path+"/prep"):
+            os.mkdir(path+"/prep")
+        newName = "data/prep/" + self.filename[5:] + "_" + filename + "." + format
         if format == "txt":
             data.to_csv(newName, index=False, header=None, sep="\n")
 
 
+def multi_files(filenames):
+    excels = [Excel("data/"+filename) for filename in filenames]
+    for excel in excels:
+        sentence = excel.select("SENTENCE")
+        excel.save("only_speak", sentence, "txt")
+
+
 if __name__ == "__main__":
+    # single file
     filename = "data/" + "test_xlsx.xlsx"
     excel = Excel(filename)
     sentence = excel.select("SENTENCE")
     excel.save("only_speak", sentence, "txt")
+
+    # multi files
+    # filenames = ["A 음식점(15,726).xlsx", "B 의류(15,826).xlsx", "C 학원(4,773).xlsx",
+    #              "D 소매점(14,949).xlsx", "E 생활서비스(11,087).xlsx", "F 카페(7,859).xlsx",
+    #              "G 숙박업(7,113).xlsx", "H 관광여가오락(4,949).xlsx"
+    #              ]
+    # multi_files(filenames)
