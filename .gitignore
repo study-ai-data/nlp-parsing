@@ -1,5 +1,11 @@
+# folder
+.idea/
+build/
+dist/
+NLParse.egg-info/
+
+# files
 *.json
 *.xml
 *.xlsx
 *.zip
-.idea/
