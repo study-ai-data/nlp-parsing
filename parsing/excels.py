@@ -44,7 +44,8 @@ class Excel:
     def save(self, filename, data, format=None):
         format = self.format[1:] if format is None else format
         newName = self.filename + "_" + filename + "." + format
-        data.to_csv(newName, index=False, header=None, sep="\n")
+        if format == "txt":
+            data.to_csv(newName, index=False, header=None, sep="\n")
 
 
 if __name__ == "__main__":
