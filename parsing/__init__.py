@@ -6,6 +6,7 @@ __download_url__ = 'https://github.com/study-ai-data/nlp-parsing'
 __install_requires__ = [
     "pandas",
     "xlrd",
+    "py-hanspell",
 ]
 __license__ = 'MIT'
 
