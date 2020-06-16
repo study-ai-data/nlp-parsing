@@ -1,2 +1,10 @@
 # nlp-parsing
-파싱 형태만 만들어놓고 열심히 써야지~~
+Korean Data Pre-processing Repository
+
+## Getting Started
+```
+git clone https://github.com/study-ai-data/nlp-parsing.git
+cd nlp-parsing
+python setup.py install
+python main.py
+```
